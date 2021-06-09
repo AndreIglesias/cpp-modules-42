@@ -6,7 +6,7 @@
 //   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/06/09 19:33:02 by ciglesia          #+#    #+#             //
-//   Updated: 2021/06/09 19:50:27 by ciglesia         ###   ########.fr       //
+//   Updated: 2021/06/09 20:43:34 by ciglesia         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -35,6 +35,7 @@ public:
 	Contact(int x);
 	void	add(int x, std::string str);
 	void	show(void);
+	void	put(void);
 };
 
 #endif

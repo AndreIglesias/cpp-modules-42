@@ -6,7 +6,7 @@
 //   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/06/09 18:31:06 by ciglesia          #+#    #+#             //
-//   Updated: 2021/06/09 20:11:23 by ciglesia         ###   ########.fr       //
+//   Updated: 2021/06/09 20:57:33 by ciglesia         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -64,7 +64,7 @@ Contact::Contact(int x)
 
 }
 
-void	ft_putformat(std::string str)
+static void	ft_putformat(std::string str)
 {
 	int	end;
 
@@ -93,4 +93,19 @@ void	Contact::show(void)
 	std::cout << "│";
 	ft_putformat(nickname);
 	std::cout << "║\n";
+}
+
+void	Contact::put(void)
+{
+	std::cout << "first name      :" << first_name << "\n";
+	std::cout << "last name       :" << last_name << "\n";
+	std::cout << "nickname        :" << nickname << "\n";
+	std::cout << "login           :" << login << "\n";
+	std::cout << "postal address  :" << postal_address << "\n";
+	std::cout << "email address   :" << email_address << "\n";
+	std::cout << "phone number    :" << phone_number << "\n";
+	std::cout << "birthday date   :" << birthday << "\n";
+	std::cout << "favorite meal   :" << fav_meal << "\n";
+	std::cout << "underwear color :" << underwear << "\n";
+	std::cout << "darkest secret  :" << secret << "\n";
 }

@@ -6,13 +6,13 @@
 //   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/06/09 17:38:18 by ciglesia          #+#    #+#             //
-//   Updated: 2021/06/09 20:19:20 by ciglesia         ###   ########.fr       //
+//   Updated: 2021/06/09 21:10:16 by ciglesia         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Contact.hpp"
 
-int	ft_prompt()
+static int	ft_prompt(void)
 {
 	std::string	cmd;
 
@@ -33,7 +33,29 @@ int	ft_prompt()
 	return (3);
 }
 
-void	ft_search(Contact *book, int c)
+static void	search_index(Contact *book, int c)
+{
+	int index;
+
+	std::cout << "index to search:\n$idx >> ";
+	std::cin >> index;
+	if (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore();
+	}
+	index--;
+	if (index < 0 || c <= index)
+	{
+		std::cout << "invalid index \n";
+		std::cin.clear();
+		std::cin.ignore();
+		return ;
+	}
+	book[index].put();
+}
+
+static void	ft_search(Contact *book, int c)
 {
 	std::cout << "╔══════════════════════════════════════════╗\n";
 	for (int i = 0; i < c; i++)
@@ -42,9 +64,10 @@ void	ft_search(Contact *book, int c)
 		book[i].show();
 	}
 	std::cout << "╚══════════════════════════════════════════╝\n";
+	search_index(book, c);
 }
 
-int	main()
+int	main(void)
 {
 	int			op;
 	int			c;
