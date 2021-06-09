@@ -1,3 +1,7 @@
+phonebook
+megaphone
+*.*~
+#*.*#
 # Prerequisites
 *.d
 
