@@ -6,7 +6,7 @@
 //   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/06/09 17:38:18 by ciglesia          #+#    #+#             //
-//   Updated: 2021/06/09 21:10:16 by ciglesia         ###   ########.fr       //
+//   Updated: 2021/06/12 18:28:46 by ciglesia         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -39,17 +39,17 @@ static void	search_index(Contact *book, int c)
 
 	std::cout << "index to search:\n$idx >> ";
 	std::cin >> index;
+	std::cin.ignore(10, '\n');
 	if (std::cin.fail())
 	{
 		std::cin.clear();
-		std::cin.ignore();
+		std::cin.ignore(10, '\n');
+		return ;
 	}
 	index--;
 	if (index < 0 || c <= index)
 	{
 		std::cout << "invalid index \n";
-		std::cin.clear();
-		std::cin.ignore();
 		return ;
 	}
 	book[index].put();
